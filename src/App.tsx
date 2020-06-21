@@ -1,9 +1,28 @@
 import React from 'react';
 import Button, {ButtonType,ButtonSize} from './components/Button/button'
+
+import Menu from './components/Menu/menu'
+import MenuItem from './components/Menu/menuItem'
+
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+
+        <Menu defaultIndex={0} onSelect={(index)=>{alert(index)}}>
+          <MenuItem index={0}>
+            cool link1
+          </MenuItem>
+
+          <MenuItem index={1} disabled>
+            cool link2
+          </MenuItem>
+
+          <MenuItem index={2}>
+            cool link3
+          </MenuItem>
+        </Menu>
+
         <Button disabled>hello</Button>
         <Button onClick={()=>{alert(123)}} autoFocus>hello</Button>
         <Button btnType={ButtonType.Primary} size={ButtonSize.Large}>hello</Button>
