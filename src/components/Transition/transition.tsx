@@ -7,6 +7,7 @@ type AnimationName = 'zoom-in-top' | 'zoom-in-left' | 'zoom-in-bottom' | 'zoom-i
 interface TransitionProps extends CSSTransitionProps {
   animation?: AnimationName,
   wrapper? : boolean,
+  classNames?: string
 }
 
 const Transition: React.FC<TransitionProps> = (props) => {
@@ -27,8 +28,8 @@ const Transition: React.FC<TransitionProps> = (props) => {
   )
 }
 Transition.defaultProps = {
-  unmountOnExit: true,
-  appear: true,
+  // unmountOnExit: true,
+  // appear: true,
 }
 
 export default Transition
